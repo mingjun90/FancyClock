@@ -1,0 +1,124 @@
+/*************************************************
+				clock setting 
+**************************************************/
+canvas {
+	/* display: none; */
+	margin: 20px;
+	padding: 20px;
+}
+img {
+	margin: 20px;
+	padding: 20px;
+}			
+.c-button {
+	padding: 100px 100px0 12px 100px;
+	margin: 10px;
+	background-color: #202020;
+	color:#28f1da;
+	width:140px;
+	font-size:15px;
+	cursor:pointer;
+	border-top: 1px solid #38538c;
+	border-right: 1px solid #1f2d4d;
+	border-bottom: 1px solid #151e33;
+	border-left: 1px solid #1f2d4d;
+	border-radius: 4px;
+}
+button:hover {
+	background-color: #7b8bab;
+	cursor: pointer; 
+}
+		
+/*************************************************
+				page setting 
+**************************************************/		
+main {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%; 
+	vertical-align: middle;
+	text-align: center;
+	background-color: #202020;
+}
+/* @media all and (max min -height:920px){main{margin-top: 4%}}	 */
+.c-button,.c-menu__close{
+	-moz-appearance:none;
+	appearance:none;
+	border-radius:none;
+	-webkit-appearance:none;
+	font-size:14px;
+	box-shadow:none
+}
+.c-button:focus,.c-menu__close:focus{outline:0}
+.c-mask,.c-menu{position:fixed}
+*,::after,::before{box-sizing:inherit}
+html{box-sizing:border-box;}
+body,html{margin:0;padding:0;/* height:100% */}
+body{
+	color:#6d6d6d;
+	background-color:#202020;
+	font-family:Oxygen,Helvetica,sans-serif;
+	font-size:14px;line-height:1.8
+}
+h1{color:#3b3b3b;font-weight:700;line-height:1.2}
+a{color:#28aadc;text-decoration:none}
+a:hover{color:#00648c}
+
+.o-wrapper{transition:transform .3s}
+.c-menu,.o-wrapper{-webkit-transition:-webkit-transform .3s}
+.o-container{margin:0 auto;padding:0 12px;max-width:960px}
+@media all and (min-width:480px){.o-container{padding:0 24px}}
+@media all and (min-width:720px){.o-container{padding:0 48px}}
+
+/*************************************************
+				header setting 
+**************************************************/
+.o-header{margin:0;padding:0}
+.o-header__title{
+	margin:4px;
+	padding:0;
+	color:#67b5d1;
+	font-size:18px;
+	font-weight:300;
+	text-align:center
+}
+@media all and (min-width:480px){.o-header__title{margin:10px;font-size:24px}}
+
+/*************************************************
+				footer setting
+**************************************************/
+.o-footer{padding:0;text-align:center}
+@media all and (min-width:480px){.o-footer{padding:0}}
+@media all and (min-width:720px){.o-footer{padding:12px 0 0 0}}
+
+/*************************************************
+				menu setting
+**************************************************/
+.c-menu{
+	z-index:200;
+	background-color:#000/* #67b5d1 */;
+	transition:transform .3s
+}
+.c-menu__items{list-style:none;margin:0;padding:0; border-bottom: 2px solid #3184a1;}
+.c-menu--slide-left{width:100%;height:100%/* ;overflow-y:scroll */}
+@media all and (min-width:320px){
+	.c-menu--slide-left{width:200px}
+}
+.c-menu--slide-left .c-menu__item{display:block;text-align:center; border-top:solid 1px #3184a1;border-bottom:solid 1px #3184a1}
+.c-menu--slide-left .c-menu__item:first-child{border-top:none}
+.c-menu--slide-left .c-menu__item:last-child{border-bottom:none}
+.c-menu--slide-left .c-menu__link{display:block;padding:12px 24px;color:#fff}
+.c-menu--slide-left .c-menu__close{display:block;padding:12px 24px;width:100%}
+.c-menu--slide-left{top:0;left:0;-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}
+@media all and (min-width:320px){
+	.c-menu--slide-left{-webkit-transform:translateX(-300px);-ms-transform:translateX(-300px);transform:translateX(-300px)}
+}
+.c-menu--slide-left.is-active{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}
+.c-mask,body.has-active-menu{overflow:hidden}
+.c-menu__close{color:#fff;background-color:#3184a1;border:none;cursor:pointer}
+.c-mask{z-index:100;top:0;left:0;width:0;height:0;background-color:#000;opacity:0;-webkit-transition:opacity .3s,width 0s .3s,height 0s .3s;transition:opacity .3s,width 0s .3s,height 0s .3s}
+.c-mask.is-active{width:100%;height:100%;opacity:.7;-webkit-transition:opacity .3s;transition:opacity .3s}
+.c-buttons{margin-bottom:20px;text-align:center}
+.c-button{display:inline-block;margin:4px;padding:12px 24px;color:#67b5d1;background:0 0;border:2px solid #67b5d1;cursor:pointer}
+.c-button:disabled{opacity:.3;cursor:not-allowed}
+

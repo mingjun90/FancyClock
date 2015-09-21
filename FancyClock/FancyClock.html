@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./js/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" href="./css/style_.css">
+		<meta charset="utf-8">
+		<title>Canvas Clock</title>
+	</head>
+	<body>
+		 <header class="o-header">
+			<div class="o-container">
+			  <!-- <h1 class="o-header__title">Digital Clock</h1> -->
+			</div>
+		</header><!-- /o-header -->
+	
+		<div id="o-wrapper" class="o-wrapper">
+			<main>
+				<canvas id="canvas" width="700" height="700"></canvas>
+				<!-- <img id="myImage" /> -->
+				<div class="c-buttons">
+				<button id="c-button--slide-left" class="c-button">Menu</button>
+				</div>
+			</main>
+			
+			<footer class="o-footer">
+			<div class="o-container">
+				<small>&copy; 2015, mjtkhub</small>
+			</div>
+			</footer><!-- /o-footer -->
+		</div><!-- /o-wrapper -->
+		
+		<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+			<button class="c-menu__close">&larr; Close Menu</button>
+			<button class="c-menu__close" name="mode1">Mode 1</button>
+			<button class="c-menu__close" name="mode2">Mode 2</button>
+		<ul class="c-menu__items">
+				<li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
+				<li class="c-menu__item"><a href="#" class="c-menu__link">About</a></li>
+				<li class="c-menu__item"><a href="#" class="c-menu__link">Contact</a></li>
+			</ul>
+		</nav><!-- /c-menu slide-left -->
+		
+		<div id="c-mask" class="c-mask"></div><!-- /c-mask --> <!-- key point here!! -->
+		
+		<script src="./js/FancyClock.js"></script>  <!-- the problem is your js runs before the html is loaded. -->
+		<!-- menus script -->
+		<script src="./js/slide_left_menu.js"></script>
+		<script>
+			/**
+			* Slide left instantiation and action.
+			*/
+			var slideLeft = new Menu({
+				wrapper: '#o-wrapper',
+				type: 'slide-left',
+				menuOpenerClass: '.c-button',
+				maskId: '#c-mask'
+			});
+
+			var slideLeftBtn = document.querySelector('#c-button--slide-left');
+			slideLeftBtn.addEventListener('click', function(e) {
+				e.preventDefault;
+				slideLeft.open();
+			});
+		</script>
+	</body>
+</html>
+
